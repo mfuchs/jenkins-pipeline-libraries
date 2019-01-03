@@ -23,3 +23,14 @@ def call(List channels)
 {
 	echo "### Inside channel function $channels"
 }
+
+def call(Map vars) {
+	echo "### Inside map function"
+	if (vars.size() == 0) {
+		call()
+	} else if (vars.size() == 1 && vars.containsKey('buildStandalone')) {
+		call(vars['buildStandalone'])
+	} else {
+		throw new IllegalArgumentException('WRONG STUFF')
+	}
+}
