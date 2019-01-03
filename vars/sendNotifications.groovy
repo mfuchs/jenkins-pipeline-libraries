@@ -10,6 +10,7 @@ def call(boolean buildStandalone)
 	if (buildStandalone) {
 		channels += 'elem2'
 	}
+	call(channels)
 }
 
 def call()
